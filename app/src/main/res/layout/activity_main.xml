@@ -1,0 +1,24 @@
+<!-- res/layout/activity_opening_screen.xml -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background1">
+
+    <ImageView
+        android:id="@+id/imageViewPegasus"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/pegasus"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Project Pegasus"
+        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>
