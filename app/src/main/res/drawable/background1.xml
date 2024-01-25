@@ -1,8 +1,33 @@
 <!-- res/drawable/background_gradient.xml -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient
-        android:startColor="#30D5C8"
-        android:centerColor="#FFF"
-        android:endColor="#FFF"
-        android:angle="90"/>
+        android:type="linear"
+        android:startX="0"
+        android:startY="0"
+        android:endX="1"
+        android:endY="1"
+        android:angle="0"
+        >
+        <item
+            android:color="#30D5C8"
+            android:offset="0"
+            />
+        <item
+            android:color="#FFFFFF"
+            android:offset="0.142"
+            />
+        <item
+            android:color="#FFFFFF"
+            android:offset="0.287"
+            />
+        <item
+            android:color="#D0E3E0"
+            android:offset="0.447"
+            />
+        <item
+            android:color="#30D5C8"
+            android:offset="1"
+            />
+    </gradient>
+
 </shape>
