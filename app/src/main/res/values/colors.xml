@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+
+    <color name="c1">#30D5C8</color>
+    <color name="c2">#67DDD1</color>
+    <color name="c3">#8CE4DA</color>
+    <color name="c4">#ABEBE3</color>
+    <color name="c5">#C8F2EC</color>
+    <color name="c6">#E4F9F6</color>
+    <color name="c7">#FFFFFF</color>
+
+    <color name="trans">#00000000 </color>
 </resources>

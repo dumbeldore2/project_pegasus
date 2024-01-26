@@ -1,24 +1,36 @@
 <!-- res/layout/activity_opening_screen.xml -->
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/background1">
 
-    <ImageView
-        android:id="@+id/imageViewPegasus"
+    <ImageButton
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/pegasus"
-        android:scaleType="centerCrop"/>
+        android:layout_height="wrap_content"
 
+        android:src="@drawable/pegasus"
+        android:background="@color/trans"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
     <TextView
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Project Pegasus"
-        android:textSize="24sp"
+        android:textSize="56dp"
         android:textColor="@android:color/white"
-        android:layout_centerInParent="true"/>
+        android:gravity="center"
 
-</RelativeLayout>
+        android:layout_marginBottom="100dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

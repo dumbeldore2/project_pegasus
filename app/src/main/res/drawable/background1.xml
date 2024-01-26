@@ -1,33 +1,32 @@
-<!-- res/drawable/background_gradient.xml -->
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <gradient
-        android:type="linear"
-        android:startX="0"
-        android:startY="0"
-        android:endX="1"
-        android:endY="1"
-        android:angle="0"
-        >
-        <item
-            android:color="#30D5C8"
-            android:offset="0"
-            />
-        <item
-            android:color="#FFFFFF"
-            android:offset="0.142"
-            />
-        <item
-            android:color="#FFFFFF"
-            android:offset="0.287"
-            />
-        <item
-            android:color="#D0E3E0"
-            android:offset="0.447"
-            />
-        <item
-            android:color="#30D5C8"
-            android:offset="1"
-            />
-    </gradient>
-
-</shape>
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape  android:shape="rectangle" >
+            <gradient
+                android:startColor="@color/c7"
+                android:centerColor="@color/c7"
+                android:endColor="@color/c7"
+                android:angle="60"/>
+        </shape>
+    </item>
+    <item>
+        <shape  android:shape="rectangle" >
+            <gradient
+                android:startColor="@color/c1"
+                android:centerColor="@color/trans"
+                android:endColor="@color/trans"
+                android:centerY="0.2"
+                android:angle="60"/>
+        </shape>
+    </item>
+    <item>
+        <shape  android:shape="rectangle" >
+            <gradient
+                android:startColor="@color/trans"
+                android:centerColor="@color/trans"
+                android:endColor="@color/c1"
+                android:centerY="0.5"
+                android:angle="60"/>
+        </shape>
+    </item>
+</layer-list>
