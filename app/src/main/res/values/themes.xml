@@ -5,5 +5,12 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:statusBarColor" >@color/c1</item>
         <item name="android:navigationBarColor">@color/c1</item>
+
+        <item name="buttonStyle">@style/Project_pegasus.button</item>
+    </style>
+
+    <style name="Project_pegasus.button" parent="Widget.Material3.Button">
+        <item name="android:background">@color/c1</item>
+        <item name="backgroundColor">@color/c1</item>
     </style>
 </resources>
