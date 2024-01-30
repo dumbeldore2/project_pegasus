@@ -72,6 +72,8 @@ public class MainActivity3 extends AppCompatActivity {
                                 // Sign in success, update UI with the signed-in user's information
                                 System.out.println("createUserWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
+                                Intent intent = new Intent(MainActivity3.this, MainActivity4.class);
+                                startActivity(intent);
                             } else {
                                 // If sign in fails, display a message to the user.
                                 System.out.println("createUserWithEmail:failure + " + task.getException());
