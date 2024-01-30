@@ -1,29 +1,29 @@
 package com.example.project_pegasus;
 
+import androidx.annotation.ColorInt;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
-import com.mongodb.MongoException;
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.result.InsertOneResult;
-
-import org.bson.Document;
-import org.bson.types.ObjectId;
-
-import java.util.Arrays;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity3 extends AppCompatActivity {
-
+    FirebaseAuth mAuth;
     //views initen
     ImageView imageView;
+    EditText editTextEmail, editTextPassword;
 
     Button add;
 
@@ -31,6 +31,8 @@ public class MainActivity3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
 
         //imageview conecten
         imageView = findViewById(R.id.imageViewLogo);
@@ -38,6 +40,9 @@ public class MainActivity3 extends AppCompatActivity {
         //button conecte
         add = findViewById(R.id.buttonRegister);
 
+        //edittexten connecten
+        editTextEmail = findViewById(R.id.editTextUsername);
+        editTextPassword = findViewById(R.id.editTextPassword);
         //functions
         backToLogin();
         newUser();
@@ -55,25 +60,26 @@ public class MainActivity3 extends AppCompatActivity {
     }
 
     public void addUser(){
-        // Replace the uri string with your MongoDB deployment's connection string
-        String connectionString = "mongodb+srv://user:user@cluster0.che0uua.mongodb.net/?retryWrites=true&w=majority";
-        try (MongoClient mongoClient = MongoClients.create(connectionString)) {
-            MongoDatabase database = mongoClient.getDatabase("project_pegasus");
-            MongoCollection<Document> collection = database.getCollection("users");
-            try {
-                // Inserts a sample document describing a movie into the collection
-                InsertOneResult result = collection.insertOne(new Document()
-                        .append("_id", new ObjectId())
-                        .append("username","yago")
-                        .append("password", "yago")
-                        .append("code", "1711"));
-                // Prints the ID of the inserted document
-                System.out.println("Success! Inserted document id: " + result.getInsertedId());
-
-                // Prints a message if any exceptions occur during the operation
-            } catch (MongoException me) {
-                System.err.println("Unable to insert due to an error: " + me);
-            }
+        System.out.println(getEmail());
+        System.out.println(getPassword());
+        System.out.println("TEST");
+        if(getEmail().length()>0 && getPassword().length()>0){
+            mAuth.createUserWithEmailAndPassword(getEmail(), getPassword())
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                System.out.println("createUserWithEmail:success");
+                                FirebaseUser user = mAuth.getCurrentUser();
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                System.out.println("createUserWithEmail:failure + " + task.getException());
+                                Toast.makeText(MainActivity3.this, "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
         }
     }
 
@@ -84,5 +90,24 @@ public class MainActivity3 extends AppCompatActivity {
                 addUser();
             }
         });
+    }
+
+    public String getEmail(){
+        String out = "";
+        if (editTextEmail.getText().length() == 0){
+            editTextEmail.setHintTextColor(getResources().getColor(R.color.c1));
+        } else {
+            out = editTextEmail.getText().toString();
+        }
+        return out;
+    }
+    public String getPassword(){
+        String out = "";
+        if (editTextPassword.getText().length() == 0){
+            editTextPassword.setHintTextColor(getResources().getColor(R.color.c1));
+        } else {
+            out = editTextPassword.getText().toString();
+        }
+        return out;
     }
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "41925954242",
+    "project_id": "project-pegasus-7ce20",
+    "storage_bucket": "project-pegasus-7ce20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:41925954242:android:b8ce3afbe459c4c720c95b",
+        "android_client_info": {
+          "package_name": "com.example.project_pegasus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMK0O7IzhbjTKnlxsMgy9i9lwp_jZ0ZoI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
