@@ -1,0 +1,36 @@
+<!-- item_card_view.xml - Layout for individual card items -->
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@drawable/background_list_item_ma4_1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/pegasus"
+            android:layout_gravity="center"/>
+
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="5dp"
+            android:background="@color/c1"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/title_project"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="lol"/>
+    </LinearLayout>
+
+</RelativeLayout>
