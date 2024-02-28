@@ -102,7 +102,7 @@
 
         <!-- RecyclerView for list items with cards -->
         <ListView
-            android:id="@+id/list_item"
+            android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="16dp"
